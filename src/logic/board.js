@@ -1,4 +1,4 @@
-import { WINNER_COMBOS } from "../constants"
+import { WINNER_COMBOS } from '../constants'
 
 /**
   * If the board has a value at the first index of a winning combo, and that value is the same as the
@@ -7,21 +7,21 @@ import { WINNER_COMBOS } from "../constants"
   * @returns The winner of the game.
   */
 export const checkWinnerFrom = (boardToCheck) => {
-    for (const combo of WINNER_COMBOS) {
-        const [a, b, c] = combo
-        if (
-            boardToCheck[a] &&
+  for (const combo of WINNER_COMBOS) {
+    const [a, b, c] = combo
+    if (
+      boardToCheck[a] &&
             boardToCheck[a] === boardToCheck[b] &&
             boardToCheck[a] === boardToCheck[c]
-        ) {
-            return boardToCheck[a]
-        }
+    ) {
+      return boardToCheck[a]
     }
-    return null
+  }
+  return null
 }
 
 export const checkEndGameFrom = (newBoard) => {
-    //revisamos si hay un empate
-    //Si no hay más espacios vacios en el tablero
-    return newBoard.every((square) => square !== null)
+  // revisamos si hay un empate
+  // Si no hay más espacios vacios en el tablero
+  return newBoard.every((square) => square !== null)
 }
