@@ -9,7 +9,7 @@ export const Square = ({children, isSelected, updateBoard, index}) => {
     }
 
     return (
-        <div className={`square ${isSelected ? 'is-selected' : ''}`} onClick={handleClick}>
+        <div className={`square ${isSelected ? 'is-selected' : ''} hover:bg-slate-600 transition-colors`} onClick={handleClick}>
             {children}
         </div>
     )
